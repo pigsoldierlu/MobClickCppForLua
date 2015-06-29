@@ -1,11 +1,15 @@
-
+﻿
 #ifndef __MobClickCppForLua__
 #define __MobClickCppForLua__
+#include "cocos2d.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "MobClickCpp.h"
-
 using namespace umeng;
+#endif
 
+
+class MobClickOnlineConfigUpdateDelegate;
 
 class MobClickCppForLua {
     

@@ -1,12 +1,12 @@
-
+﻿
 #include "MobClickCppForLua.h"
+
+USING_NS_CC;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     #include "MobClickCpp.h"
     using namespace umeng;
-#endif
 
-USING_NS_CC;
 
 
 eventDict* str2Map(const char* pStr) {
@@ -51,6 +51,10 @@ eventDict* str2Map(const char* pStr) {
     
     return pDict;
 }
+
+
+#endif
+
 
 
 void MobClickCppForLua::installAndStart(const char * appKey, const char * channelId) {
@@ -157,6 +161,8 @@ const char* MobClickCppForLua::getConfigParam(const char * key) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     string val = MobClickCpp::getConfigParam(key);
     return val.c_str();
+#else
+	return "";
 #endif
 }
 
