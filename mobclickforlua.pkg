@@ -1,0 +1,69 @@
+
+
+$#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+$#include "MobClickCppForLua.h"
+$#endif
+
+
+
+class MobClickCppForLua {
+    
+public:
+
+    static void installAndStart(const char * appKey, const char * channelId = NULL);
+
+    static void setLogEnabled(bool value);
+
+    static void setProxy(const char* host, int port);
+    
+    static void setSessionIdleLimit(int seconds);
+    
+    static void startWithAppkey(const char * appKey, const char * channelId = 0);
+    
+    static void applicationDidEnterBackground();
+    
+    static void applicationWillEnterForeground();
+    
+    static void end();
+    
+    static void mainloop(float dt);
+    
+    static void event(const char * eventId, const char * label = 0);
+
+    static void eventCustom(const char * eventId, const char * attributes, int counter = 0);
+    
+    
+    static void beginLogPageView(const char *pageName);
+
+    static void endLogPageView(const char *pageName);
+    
+    static void updateOnlineConfig(MobClickOnlineConfigUpdateDelegate* pDelegate = 0, void *pUserData = 0);
+
+    
+    static const char* getConfigParam(const char * key);
+    
+
+    static void setUserLevel(const char *level);
+
+    static void setUserInfo(const char * userId, int sex, int age, const char * platform);
+    
+    static void startLevel(const char * level);
+    
+    static void finishLevel(const char * level);
+    
+    static void failLevel(const char * level);
+    
+    static void pay(double cash, int source, double coin);
+    
+    static void pay(double cash, int source, const char * item, int amount, double price);
+    
+    static void buy(const char *item, int amount, double price);
+    
+    static void use(const char * item, int amount, double price);
+    
+    static void bonus(double coin, int source);
+    
+    static void bonus(const char * item, int amount, double price, int source);
+
+};
+
